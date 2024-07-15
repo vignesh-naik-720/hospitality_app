@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitality Process Digitalization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Digitalize the Hospitality Process</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="upload-section">
+                <label for="file1">Upload Group Information CSV:</label>
+                <input type="file" id="file1" name="file1" accept=".csv" required>
+            </div>
+            <div class="upload-section">
+                <label for="file2">Upload Hostel Information CSV:</label>
+                <input type="file" id="file2" name="file2" accept=".csv" required>
+            </div>
+            <button type="submit">Process CSVs</button>
+        </form>
+    </div>
+</body>
+</html>

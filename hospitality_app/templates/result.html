@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allocation Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Allocation Results</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Group ID</th>
+                    <th>Hostel Name</th>
+                    <th>Room Number</th>
+                    <th>Members Allocated</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for room in allocated_rooms %}
+                <tr>
+                    <td>{{ room['Group ID'] }}</td>
+                    <td>{{ room['Hostel Name'] }}</td>
+                    <td>{{ room['Room Number'] }}</td>
+                    <td>{{ room['Members Allocated'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="links">
+            <a href="{{ url_for('download', allocated_rooms=allocated_rooms|tojson) }}">Download CSV</a>
+            <a href="{{ url_for('index') }}">Upload New Files</a>
+        </div>
+    </div>
+</body>
+</html>
